@@ -60,7 +60,6 @@ const createOrder = async (
   const response = await client.createOrder(wallet, orderData);
   return response;
 };
-
 createOrder(wallet, orderData)
   .then((result) => {
     console.log(result);
@@ -92,11 +91,9 @@ const createTrade = async (wallet: WalletConnection, orderId: number) => {
     order_id: orderId,
     user: ethAddress
   } as GetSignableTradeRequest;
-
   const response = await client.createTrade(wallet, tradeData);
   return response;
 }
-
 createTrade(wallet, 7232)
   .then((result) => {
     console.log(result)
